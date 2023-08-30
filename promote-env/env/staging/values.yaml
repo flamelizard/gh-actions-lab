@@ -1,0 +1,2 @@
+# values not to carry over on promotion
+replicas: 2
