@@ -1,6 +1,8 @@
 name: Promote staging to prod
 
 on:
+  # allow manual run
+  workflow_dispatch:
   push:
     branches:
     - master
