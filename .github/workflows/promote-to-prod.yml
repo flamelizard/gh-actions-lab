@@ -1,4 +1,4 @@
-name: Promote stating to prod
+name: Promote staging to prod
 
 on:
   push:
