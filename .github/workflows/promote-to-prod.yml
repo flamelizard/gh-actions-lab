@@ -33,10 +33,10 @@ jobs:
     - run:
         # github CLI
         gh pr create \
-          -B master \
-          -H staging/${{ github.sha }} \
-          --title "Promote stating to prod" \
-          --body "Automatically created by workflow"
+        -B master \
+        -H staging/${{ github.sha }} \
+        --title "Promote stating to prod" \
+        --body "Automatically created by workflow"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
