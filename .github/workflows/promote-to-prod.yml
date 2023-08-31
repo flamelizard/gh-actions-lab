@@ -29,7 +29,7 @@ jobs:
         cp promote-env/env/staging/version.yaml promote-env/env/prod/version.yaml
         git add promote-env/env/prod/version.yaml
         git commit -m "Promote stating to prod"
-        git push -u origin staging/${{ github.sha }}
+        git push origin staging/${{ github.sha }}
         git status
     - run: |
         # github CLI
