@@ -30,13 +30,13 @@ jobs:
         git add promote-env/env/prod/version.yaml
         git commit -m "Promote stating to prod"
         git push origin staging/${{ github.sha }}
-    - run:
+    - run: |
         # github CLI
         gh pr create \
-        -B master \
-        -H staging/${{ github.sha }} \
-        --title "Promote stating to prod" \
-        --body "Automatically created by workflow"
+          -B master \
+          -H staging/${{ github.sha }} \
+          --title "Promote stating to prod" \
+          --body "Automatically created by workflow"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
