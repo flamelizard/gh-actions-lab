@@ -24,6 +24,6 @@ jobs:
         git checkout -B staging/${{ github.sha }}
         # promote
         cp promote-env/env/staging/version.yaml promote-env/env/prod/version.yaml
-        git add promote-env/prod/version.yaml
+        git add promote-env/env/prod/version.yaml
         git commit -m "Promote stating to prod"
         git push origin staging/${{ github.sha }}
