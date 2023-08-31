@@ -11,9 +11,9 @@ on:
     - promote-env/env/staging/version.yaml
 
 # override default permission set on GITHUB_TOKEN
-# permissions:
-#   contents: write
-#   pull-requests: write
+permissions:
+  contents: write
+  # pull-requests: write
 
 jobs:
   promote:
