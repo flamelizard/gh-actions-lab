@@ -22,6 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: |
+        # required to create a commit
         git config --global user.email "bob.jones@gmail.com"
         git config --global user.name "Bob Jones"
         git checkout -B staging/${{ github.sha }}
