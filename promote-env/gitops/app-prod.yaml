@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-prod
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
+  destination:
+    namespace: prod
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: promote-env/sample-app
+    repoURL: https://github.com/flamelizard/gh-actions-lab.git
+    targetRevision: master
+    helm:
+      valueFiles:
+        - ../env/prod/values.yaml
+        - ../env/prod/version.yaml
